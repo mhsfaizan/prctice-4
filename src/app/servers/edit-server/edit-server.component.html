@@ -1,0 +1,19 @@
+<div class="form-group">
+  <label for="servername">ServerName</label>
+  <input type="text" class="form-control" id="servername" placeholder="servername" [value]="server.name" #serverName>
+</div>
+<div class="form-group">
+  <label for="status">Status</label>
+  <select  id="status" class="form-control" #status>
+    <option [attr.selected]="server.status == 'online' ? '' : null">Online</option>
+    <option [attr.selected]="server.status == 'offline' ? '' : null">Offline</option>
+  </select>
+</div>
+<button class="btn btn-primary" (click) = "update(serverName.value,status.value,server.id)">Update server</button>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <h4>{{server.name}}</h4>
+    <p>{{server.status}}</p>
+  </div>
+</div>
